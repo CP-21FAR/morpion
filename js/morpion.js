@@ -33,8 +33,7 @@ function Gagnant() {
     cs7 = $("table tr:nth-child(3) td:nth-child(1)").attr('class');
     cs8 = $("table tr:nth-child(3) td:nth-child(2)").attr('class');
     cs9 = $("table tr:nth-child(3) td:nth-child(3)").attr('class');
-
-    //check rows
+   
     if((cs1 == cs2) && (cs2 == cs3)){
         console.log(cs3);
         return cs3;
