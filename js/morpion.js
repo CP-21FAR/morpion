@@ -1,9 +1,14 @@
+    const h1Element = document.createElement("h1");
+    h1Element.textContent = "Jeu du morpion";
+    document.body.append(h1Element);
 $(function (){
+
+    
     var i = 0
     var array = [0,1,2,3,4,5,6,7,8];
-
+    
     //pour chaque case
-    $("body").append("<h2 class='info'>&nbsp;</h2>");
+    $("body").css("background-color", "lightgrey").append("<h2 class='info'>&nbsp;</h2>");
     $("td").each(function (index, element){
     //Clique dans une case
     $(this).click(function () {
@@ -96,4 +101,12 @@ $(function (){
     $('.bnut').click(function() {
         location.reload();
     })
+
+    
+    //esthétique
+
+    $("h1").css("color", "white").css("margin-left", "655px").css("margin-top", "-300px");;
+    $("table").css("background-color", "white").css("margin", "auto").css("margin-top", "150px");;
+    $('.bnut').css("margin-left", "730px");;
+    
 })
