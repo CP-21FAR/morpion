@@ -1,14 +1,16 @@
-﻿
+table{
+    margin: auto;
+}
 td {
-	width: 100px;
-	height: 80px;
-	text-align: center;
+    width: 100px;
+    height: 80px;
+    text-align: center;
 }
 
 .symbole_0{
-	background-image:url("../0.png");
+    background-image:url("./0.png");
 }
 
 .symbole_1{
-	background-image:url("../1.png");
+    background-image:url("./1.png");
 }
