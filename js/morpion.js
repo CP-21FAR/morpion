@@ -27,7 +27,7 @@ $(function (){
         }else {
             //mettre le symbole rond si $i est paire
             if (i % 2 != 0) {
-                h3Element.textContent = "Au tour des □";
+                h3Element.textContent = "Au tour des X";
                 $(element).addClass("symbole_0")
                 i++
                 array.splice(index,1,"O")
@@ -35,7 +35,7 @@ $(function (){
 
             //sinon mettre le symbole croix si $i est impaire
             } else {  
-                h3Element.textContent = "Au tour des ○";
+                h3Element.textContent = "Au tour des O";
                 $(element).addClass("symbole_1")
                 i++
                 array.splice(index,1,"X")
@@ -53,19 +53,9 @@ $(function (){
                 array[2] === "X" && array[5] === "X" && array[8] === "X" ||
                 array[0] === "X" && array[4] === "X" && array[8] === "X" ||
                 array[6] === "X" && array[4] === "X" && array[2] === "X" ){
-                h3Element.textContent = "✨ Le joueur □ a gagné ✨";
-                $("h3").css("color", "green").css("text-shadow", " 1px 1px 0px green");
-                setTimeout(() => {
-                    alert("Victore des croix, cliquez sur le bouton 'OK' pour recommencer")
-                    //Remettre le tableau par défaut
-                    array = [0,1,2,3,4,5,6,7,8];
-                    //remettre les classes par défaut
-                    $("td").removeClass("symbole_0")
-                    $("td").removeClass("symbole_1")
-                    i = 0
-                    h3Element.textContent = ""
-                    $("h3").css("color", "white").css("text-shadow", "1px 1px 2px darkred")
-                })
+                    h3Element.textContent = "✨ Le joueur X a gagné ✨";
+                    $("h3").css("color", "green").css("text-shadow", " 1px 1px 0px green");
+                    $("td").css("pointer-events", "none");
             //vérifier si les croix n'ont pas gagné
             }else if (i > 8){
                 var egalite = 1
@@ -79,36 +69,16 @@ $(function (){
                 array[2] === "O" && array[5] === "O" && array[8] === "O" ||
                 array[0] === "O" && array[4] === "O" && array[8] === "O" ||
                 array[6] === "O" && array[4] === "O" && array[2] === "O" ){
-                h3Element.textContent = "✨ Le joueur ○ a gagné ✨";
+                h3Element.textContent = "✨ Le joueur 0 a gagné ✨";
                 $("h3").css("color", "green").css("text-shadow", " 1px 1px 0px green");
-                setTimeout(() => {
-                    alert("Victoire des ronds, cliquez sur 'OK' pour recommencer")
-                     //remettre le tableau par défaut
-                    array = [0,1,2,3,4,5,6,7,8];
-                    //remettre les classes par défaut
-                    $("td").removeClass("symbole_0")
-                    $("td").removeClass("symbole_1")
-                    i = 0
-                    h3Element.textContent = ""
-                    $("h3").css("color", "white").css("text-shadow", "1px 1px 2px darkred")
-                }, 100)
+                $("td").css("pointer-events", "none");
             }else if (i > 8){
                  egalite++
             }
             if (egalite == 2){
                 h3Element.textContent = "✨ Egalité des deux joueurs ✨";
                 $("h3").css("color", "gold").css("text-shadow", "1px 1px 1px black");
-                setTimeout(() => {
-                    alert("Egalité, cliquez sur 'OK' pour recommencer")
-                    //Remettre le tableau par défaut
-                    array = [0,1,2,3,4,5,6,7,8];
-                    //Remettre les classes par défaut
-                    $("td").removeClass("symbole_0")
-                    $("td").removeClass("symbole_1")
-                    i = 0
-                    h3Element.textContent = ""
-                    $("h3").css("color", "white").css("text-shadow", "1px 1px 2px darkred");
-                }, 100)
+                $("td").css("pointer-events", "none");
             }
         }
     })
@@ -123,7 +93,7 @@ $(function (){
     })
 
     
-    //esthétique
+    //CSS
     $("body").css("background", "radial-gradient(circle, rgba(193,192,192,1) 8%, rgba(136,136,136,1) 70%)").css("font-family", "Arial");
     $("h1").css("color", "white").css("text-shadow", "1px 1px 2px darkred").css("text-align", "center").css("margin-top", "-300px").css("margin-bottom", "250px");
     $("table").css("background-color", "white").css("margin", "auto").css("margin-top", "150px").css("border", "black").css("border-collapse", "collapse");
